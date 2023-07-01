@@ -43,7 +43,6 @@ model User {
   name          String?
   email         String?   @unique
   emailVerified DateTime?
-
   username String? @unique
 
   image    String?
@@ -51,6 +50,11 @@ model User {
   sessions Session[]
 
   createdSubreddits Subreddit[] @relation("CreatedBy")
+  subscriptions Subscription[]
+  posts Post[]
+  comments Comment[]
+  votes Vote[]
+  commentVotes CommentVote[]
 }
 
 model Subreddit {
@@ -76,7 +80,6 @@ model Subscription {
     subredditId String
 
     @@id([userId, subredditId])
-    @@index([userId, subredditId], name: "user_subreddit")
 }
 
 model Post {
@@ -92,6 +95,7 @@ model Post {
     authorId String
 
     comments Comment[]
+    votes Vote[]
 }
 
 model Comment {
