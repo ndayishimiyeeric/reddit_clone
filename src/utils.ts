@@ -1,6 +1,6 @@
 import {db} from "@/lib/db";
 
-export const getSubreddit = async (name: string) => {
+export const getSubreddit = async (name: string, take: number) => {
     const subredditData = await db.subreddit.findFirst({
         where: {
             name: name
@@ -15,6 +15,7 @@ export const getSubreddit = async (name: string) => {
                 }
             },
         },
+        take: take,
     })
 
     return subredditData
