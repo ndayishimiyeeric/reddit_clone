@@ -45,6 +45,16 @@ const Page: React.FC<pageProps> = () => {
                     return loginToast();
                 }
             }
+
+            toast({
+                title: "An error occurred.",
+                description: "Could not create Community. Please try again later.",
+                variant: "destructive"
+            })
+        },
+
+        onSuccess: (data) => {
+            router.push(`/r/${data}`)
         },
     })
     return (
