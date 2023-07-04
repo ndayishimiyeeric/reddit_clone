@@ -4,6 +4,8 @@ import {db} from "@/lib/db";
 import {notFound} from "next/navigation";
 import {format} from "date-fns"
 import SubscriberLeaveToggle from "@/components/SubscriberLeaveToggle";
+import Link from "next/link";
+import {buttonVariants} from "@/components/ui/Button";
 
 const Layout = async ({ children, params: {slug} }: {
     children: React.ReactNode
@@ -88,6 +90,14 @@ const Layout = async ({ children, params: {slug} }: {
                                     isSubscribed={isSubscribed}
                                 />
                             ) : null}
+
+                            <Link
+                                href={`r/${slug}/submit`}
+                                className={buttonVariants({
+                                    variant: 'outline',
+                                    className: 'w-full mb-6'
+                                })}
+                            >Create Post</Link>
                         </dl>
                     </div>
                 </div>
