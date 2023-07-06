@@ -53,6 +53,8 @@ const PostFeed: React.FC<PostFeedProps> = ({initialPosts, subredditName, session
                         subredditName={post.subreddit.name}
                         post={post}
                         commentCount={post.comments.length}
+                        currentVote={userVote}
+                        voteCount={voteCount}
                     />
                 </li>
             } else {
@@ -61,6 +63,8 @@ const PostFeed: React.FC<PostFeedProps> = ({initialPosts, subredditName, session
                     subredditName={post.subreddit.name}
                     post={post}
                     commentCount={post.comments.length}
+                    currentVote={userVote}
+                    voteCount={voteCount}
                 />
             }
         })}
