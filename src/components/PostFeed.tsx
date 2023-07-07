@@ -35,6 +35,12 @@ const PostFeed: React.FC<PostFeedProps> = ({initialPosts, subredditName, session
         },
     )
 
+    React.useEffect(() => {
+        if (entry?.isIntersecting) {
+            fetchNextPage().then(r => r);
+        }
+    }, [entry, fetchNextPage]);
+
     const posts = data?.pages.flatMap((page) => page) ?? initialPosts;
 
     return <ul className='flex flex-col col-span-2 space-y-6'>

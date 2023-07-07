@@ -4,6 +4,7 @@ import {db} from "@/lib/db";
 import {INFINITE_SCROLL_PAGE_SIZE} from "@/config";
 import {notFound} from "next/navigation";
 import MiniCreatePost from "@/components/MiniCreatePost";
+import PostFeed from "@/components/PostFeed";
 
 interface pageProps {
     params: {
@@ -26,6 +27,10 @@ const Page = async ({params}: pageProps) => {
                     comments: true,
                 },
 
+                orderBy: {
+                    createdAt: "desc",
+                },
+
                 take: INFINITE_SCROLL_PAGE_SIZE,
             },
         },
@@ -38,6 +43,11 @@ const Page = async ({params}: pageProps) => {
             <MiniCreatePost session={session} />
 
             {/* TODO: Show posts in user feed   */}
+            <PostFeed
+                initialPosts={subreddit.posts}
+                subredditName={subreddit.name}
+                session={session}
+            />
         </>
     )
 };
