@@ -13,7 +13,7 @@ const UserAvatar: React.FC<UserAvatarProps> = ({user, ...props}) => {
     return (
         <>
             <Avatar {...props}>
-                {user.image? (
+                {user.image ? (
                     <div className="relative aspect-square h-full w-full">
                         <Image src={user.image} alt={user.name!} fill referrerPolicy='no-referrer'/>
                     </div>
