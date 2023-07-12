@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react";
-import {ExtendedPost} from "@/styles/db";
+import {ExtendedPost} from "@/types/db";
 import {useIntersection} from "@mantine/hooks";
 import {useInfiniteQuery} from "@tanstack/react-query";
 import {INFINITE_SCROLL_PAGE_SIZE} from "@/config";
