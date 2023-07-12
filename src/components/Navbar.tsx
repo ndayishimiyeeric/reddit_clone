@@ -3,6 +3,7 @@ import {Icons} from "@/components/Icons";
 import {buttonVariants} from "@/components/ui/Button";
 import {getAuthSession} from "@/lib/auth";
 import NavUserAccount from "@/components/NavUserAccount";
+import SearchBar from "@/components/SearchBar";
 
 const Navbar = async () => {
     const session = await getAuthSession();
@@ -14,6 +15,8 @@ const Navbar = async () => {
                         <Icons.logo className='h-8 w-8 sm:h-6 sm:w-6' />
                         <p className='hidden text-zinc-700 text-sm font-medium md:block'>Reddit Clone</p>
                     </Link>
+
+                    <SearchBar />
 
                     {session?.user ? (
                         <NavUserAccount user={session.user} />
