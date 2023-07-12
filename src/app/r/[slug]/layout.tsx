@@ -91,13 +91,15 @@ const Layout = async ({ children, params: {slug} }: {
                                 />
                             ) : null}
 
-                            <Link
+                            {isSubscribed
+                                ? (<Link
                                 href={`r/${slug}/submit`}
                                 className={buttonVariants({
                                     variant: 'outline',
                                     className: 'w-full mb-6'
                                 })}
-                            >Create Post</Link>
+                                >Create Post</Link>)
+                                :  null}
                         </dl>
                     </div>
                 </div>
