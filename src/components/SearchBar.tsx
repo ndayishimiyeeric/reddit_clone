@@ -5,9 +5,10 @@ import {Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandL
 import {useQuery} from "@tanstack/react-query";
 import axios from "axios";
 import {Subreddit, Prisma} from "@prisma/client";
-import {useRouter} from "next/navigation";
+import {usePathname, useRouter} from "next/navigation";
 import {Loader2Icon, Users} from "lucide-react";
 import debounce from 'lodash.debounce'
+import {useOnClickOutside} from "@/hooks/use-on-click-outside";
 
 const SearchBarProps = () => {};
 
@@ -37,8 +38,20 @@ const SearchBar = () => {
       request()
   }, [request])
 
+  const commandRef = React.useRef<HTMLDivElement>(null)
+  useOnClickOutside(commandRef, () => {
+      setSearchQuery('')
+  })
+  const pathname = usePathname()
+  React.useEffect(() => {
+      setSearchQuery('')
+  }, [pathname])
+
   return (
-      <Command className='relative rounded-lg border max-w-lg z-50 overflow-visible'>
+      <Command
+          className='relative rounded-lg border max-w-lg z-50 overflow-visible'
+          ref={commandRef}
+      >
           <CommandInput
               className='outline-none border-none focus:border-none focus:outline-none ring-0'
               placeholder='Search communities...'
