@@ -1,8 +1,6 @@
 import React from "react";
 import {getAuthSession} from "@/lib/auth";
 import {db} from "@/lib/db";
-import PostComment from "@/components/PostComment";
-import CreateComment from "@/components/CreateComment";
 import CommentSectionClient from "@/components/CommentSection/CommentSectionClient";
 
 interface CommentSectionProps {
