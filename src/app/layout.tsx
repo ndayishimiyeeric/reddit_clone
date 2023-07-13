@@ -7,8 +7,8 @@ import {Toaster} from "@/components/ui/Toaster";
 import Providers from "@/components/Providers";
 
 export const metadata = {
-  title: 'Reddit Clone',
-  description: 'A Reddit clone built with Next.js and TypeScript.',
+  title: 'Feeddit',
+  description: 'Feeddit is a Reddit clone built with Next.js, Prisma and TypeScript.',
 }
 
 const inter = Inter({subsets: ['latin']})
