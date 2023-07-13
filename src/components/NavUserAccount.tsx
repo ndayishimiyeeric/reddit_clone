@@ -41,7 +41,7 @@ const NavUserAccount: React.FC<NavUserAccountProps> = ({ user }) => {
                     <DropdownMenuSeparator/>
 
                     <DropdownMenuItem asChild>
-                        <Link href='/'>Feed</Link>
+                        <a href='/'>Feed</a>
                     </DropdownMenuItem>
 
                     <DropdownMenuItem asChild>
