@@ -46,7 +46,7 @@ const Page: React.FC<pageProps> = () => {
                 }
             }
 
-            toast({
+            return toast({
                 title: "An error occurred.",
                 description: "Could not create Community. Please try again later.",
                 variant: "destructive"
