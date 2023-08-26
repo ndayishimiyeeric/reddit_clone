@@ -12,6 +12,7 @@ Built With:
 
 Key Features:
 
+- Infinite scroll
 - Creating posts, voting(up or down), liking, searching...
 - Creating communities.
 - Nextjs Authentication
