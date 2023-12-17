@@ -1,11 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['uploadthing.com', 'lh3.googleusercontent.com'],
+    remotePatterns: [
+      {
+        hostname: "utfs.io",
+        protocol: "https",
+      },
+      {
+        hostname: "lh3.googleusercontent.com",
+        protocol: "https",
+      },
+      {
+        hostname: "uploadthing.com",
+        protocol: "https",
+      },
+    ],
   },
-  experimental: {
-    appDir: true
-  }
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
